@@ -1,9 +1,9 @@
 export function VideoCard() {
   return (
-    <div className="flex flex-col items-center gap-3  ">
+    <div className="flex flex-col gap-3  ">
       <iframe
         className="rounded-2xl"
-        width="320"
+        width="100%"
         height="220"
         src="https://www.youtube.com/embed/8Gmq5BEVgxg?si=aUF0vXWjFkRhJ__c"
         title="YouTube video player"
