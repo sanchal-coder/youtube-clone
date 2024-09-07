@@ -42,19 +42,19 @@ export function BigSideBar({ isOpen, setIsOpen }: BigSideBarProps) {
             <p>History</p>
           </div>
           <div className="flex gap-3 h-7 w-auto">
-            <img src="youtube_subscription_icon.svg"></img>
+            <img src="you_playlist.svg"></img>
             <p>Playlists</p>
           </div>
           <div className="flex gap-3 h-7 w-auto">
-            <img src="youtube_subscription_icon.svg"></img>
+            <img src="you_videos.svg"></img>
             <p className="flex-grow">Your videos</p>
           </div>
           <div className="flex gap-3 h-7 w-auto">
-            <img src="youtube_subscription_icon.svg"></img>
+            <img src="you_watch_later.svg"></img>
             <p className="flex-grow">Watch later</p>
           </div>
           <div className="flex gap-3 h-7 w-auto">
-            <img src="youtube_subscription_icon.svg"></img>
+            <img src="you_liked_videos.svg"></img>
             <p className="flex-grow">Liked videos</p>
           </div>
           <hr className="border-[#4E4E4E]"></hr>
@@ -96,47 +96,47 @@ export function BigSideBar({ isOpen, setIsOpen }: BigSideBarProps) {
             <p>Explore</p>
           </div>
           <div className="flex gap-3 h-7 w-7">
-            <img src="youtube-shorts-logo.svg"></img>
+            <img src="explore_trending.svg"></img>
             <p>Trending</p>
           </div>
           <div className="flex gap-3 h-7 w-7">
-            <img src="youtube_subscription_icon.svg"></img>
+            <img src="explore_shopping.svg"></img>
             <p>Shopping</p>
           </div>
           <div className="flex gap-3 h-7 w-7">
-            <img src="youtube_subscription_icon.svg"></img>
+            <img src="explore_music.svg"></img>
             <p>Music</p>
           </div>
           <div className="flex gap-3 h-7 w-7">
-            <img src="youtube_subscription_icon.svg"></img>
+            <img src="explore_movies.svg"></img>
             <p>Movies</p>
           </div>
           <div className="flex gap-3 h-7 w-7">
-            <img src="youtube_subscription_icon.svg"></img>
+            <img src="explore_live.svg"></img>
             <p>Live</p>
           </div>
           <div className="flex gap-3 h-7 w-7">
-            <img src="youtube_subscription_icon.svg"></img>
+            <img src="explore_gaming.svg"></img>
             <p>Gaming</p>
           </div>
           <div className="flex gap-3 h-7 w-7">
-            <img src="youtube_subscription_icon.svg"></img>
+            <img src="explore_news.svg"></img>
             <p>News</p>
           </div>
           <div className="flex gap-3 h-7 w-7">
-            <img src="youtube_subscription_icon.svg"></img>
+            <img src="explore_sports.svg"></img>
             <p>Sports</p>
           </div>
           <div className="flex gap-3 h-7 w-7">
-            <img src="youtube_subscription_icon.svg"></img>
+            <img src="explore_courses.svg"></img>
             <p>Courses</p>
           </div>
           <div className="flex gap-3 h-7 w-auto">
-            <img src="youtube_subscription_icon.svg"></img>
+            <img src="explore_f&b.svg"></img>
             <p className="">Fashion & Beauty </p>
           </div>
           <div className="flex gap-3 h-7 w-7">
-            <img src="youtube_subscription_icon.svg"></img>
+            <img src="explore_podcasts.svg"></img>
             <p>Podcasts</p>
           </div>
           <hr></hr>
@@ -147,19 +147,19 @@ export function BigSideBar({ isOpen, setIsOpen }: BigSideBarProps) {
             <p>More from YouTube</p>
           </div>
           <div className="flex gap-3 h-7 w-auto">
-            <img src="youtube_subscription_icon.svg"></img>
+            <img src="youtube_premium.svg"></img>
             <p>YouTube Premium</p>
           </div>
           <div className="flex gap-3 h-7 w-auto">
-            <img src="youtube_subscription_icon.svg"></img>
+            <img src="youtube_studio.svg"></img>
             <p>YouTube Studio</p>
           </div>
           <div className="flex gap-3 h-7 w-auto">
-            <img src="youtube_subscription_icon.svg"></img>
+            <img src="youtube_music.svg"></img>
             <p>YouTube Music</p>
           </div>
           <div className="flex gap-3 h-7 w-auto">
-            <img src="youtube_subscription_icon.svg"></img>
+            <img src="youtube_kids.svg"></img>
             <p>YouTube Kids</p>
           </div>
           <hr></hr>
@@ -167,25 +167,33 @@ export function BigSideBar({ isOpen, setIsOpen }: BigSideBarProps) {
 
         <div className="flex flex-col p-4 pt-0 gap-4">
         <div className="flex gap-3 h-7 w-7">
-          <img src="home.svg" alt="" />
+          <img src="youtube_settings.svg" alt="" />
           <p>Settings</p>
         </div>
         <div className="flex gap-3 h-7 w-auto items-center">
-        <img src="youtube_subscription_icon.svg"></img>
+        <img src="youtube_reportHistory.svg"></img>
           <p>Report history</p>
         </div>
         <div className="flex gap-3 h-7 w-7 items-center">
-          <img src="youtube_subscription_icon.svg"></img>
+          <img src="youtube_help.svg"></img>
           <p>Help</p>
         </div>
         <div className="flex h-7 w-auto gap-4 items-center">
-          <img src="home.svg" alt="" />
+          <img src="youtube_sendfeedback.svg" alt="" />
           <p>Send feedback</p>
         </div>
         </div>
         <hr></hr>
        <div>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum corrupti, quod quibusdam quidem ea cupiditate illum, possimus optio repellat voluptate veniam iusto. Iure fugiat assumenda magnam dignissimos enim deleniti aut?
+        About Press Copyright
+        Contact us Creators
+        Advertise Developers
+       </div>
+       <br/>
+       <div>
+        Terms Privacy Policy & Safety
+        How YouTube works
+        Test new features
        </div>
       </div>
     </div>

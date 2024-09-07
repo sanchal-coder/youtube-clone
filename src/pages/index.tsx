@@ -18,7 +18,7 @@ export default function Home() {
       <div className="flex">
         <BigSideBar isOpen={isOpen} setIsOpen={setIsOpen} />
 
-        <div className="grid grid-cols-1   md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 p-5 mt-20 ">
+        <div className="grid grid-cols-1   md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 p-5 mt-20 flex-grow">
           {[...Array(20)].map((_, i) => (
             <VideoCard />
           ))}
