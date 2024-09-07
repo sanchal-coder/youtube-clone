@@ -18,7 +18,7 @@ export function NavBar({isOpen,setIsOpen}: NavBarProps) {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="size-7"
+              className="size-5 md:size-7"
             >
               <path
                 strokeLinecap="round"
@@ -28,9 +28,9 @@ export function NavBar({isOpen,setIsOpen}: NavBarProps) {
             </svg>
 
             <div className="flex gap-1 items-center">
-              <img className="h-7 w-7" src="/youtube.png" alt="" />
+              <img className="h-5 w-5 md:h-7 md:w-7" src="/youtube.png" alt="" />
               <p className="font-bold">
-                <span className="text-xl">YouTube</span><sup className="font-thin text-[#AAAAAA]"> IN</sup>
+                <span className="text-xs md:text-xl">YouTube</span><sup className="font-thin text-[9px] md:text-xs text-[#AAAAAA]"> IN</sup>
               </p>
             </div>
           </div>
@@ -79,14 +79,14 @@ export function NavBar({isOpen,setIsOpen}: NavBarProps) {
           </div>
 
           <div className="flex gap-4 justify-between  items-center">
-            <div className="w-6">
+            <div className="w-6 hidden md:block">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="size-6"
+                className="size-6 "
               >
                 <path
                   strokeLinecap="round"
