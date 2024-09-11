@@ -1,18 +1,20 @@
 export function VideoCard() {
   return (
     <div className="flex flex-col gap-3  ">
-      <iframe
-        className="rounded-2xl"
-        width="100%"
-        height="220"
-        src="https://www.youtube.com/embed/8Gmq5BEVgxg?si=aUF0vXWjFkRhJ__c"
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerPolicy="strict-origin-when-cross-origin"
-        allowFullScreen
-      ></iframe>
-      <div className="flex justify-between max-w-[320px]">
+   
+        <iframe
+          className="rounded-2xl"
+          width="100%"
+          height="220"
+          src="https://www.youtube.com/embed/8Gmq5BEVgxg?si=aUF0vXWjFkRhJ__c"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        ></iframe>
+      
+      <div className="flex justify-between w-auto">
         <div className="flex space-x-3">
           <div>
             <img
@@ -21,7 +23,7 @@ export function VideoCard() {
               alt=""
             />
           </div>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 ">
             <p>How Jaipur police surprised kidnappers</p>
 
             <div>

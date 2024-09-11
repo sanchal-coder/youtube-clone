@@ -9,7 +9,7 @@ interface BigSideBarProps {
 export function BigSideBar({ isOpen, setIsOpen }: BigSideBarProps) {
   const [isSubExpand, setisSubExpand] = useState(false);
   return (
-    <div className={`${isOpen ? "w-0" : "w-[240px] "}`}>
+    <div className={`${isOpen ? "w-0" : "w-[240px] "} fixed top-16 z-20 md:static md:z-0 bg-[#0F0F0F] md:bg-transparent` }>
       <div
         className={` h-screen sticky top-[70px] gap-1 flex overflow-hidden flex-col hover:overflow-y-scroll`}
       >

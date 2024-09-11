@@ -1,6 +1,6 @@
 export function SideBar() {
   return (
-    <div className="hidden sm:flex flex-col items-center pl-1 fixed h-screen top-20 bg-[#0F0F0F]">
+    <div className="hidden sm:flex flex-col items-center pl-1 h-screen mt-16 bg-[#0F0F0F]">
          <div className="flex flex-col justify-center items-center gap-1 hover:bg-[#2E2E2E] p-5 rounded-xl w-[69px] h-[74px] ">
         
         <img className=" w-6 h-6 " src="/home.svg" alt="" />
