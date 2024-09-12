@@ -6,81 +6,83 @@ interface BigSideBarProps {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
+interface SidebarItemProps {
+  icon: string;
+  text: string;
+}
+
+const SidebarItem: React.FC<SidebarItemProps> = ({ icon, text }) => (
+  <div className="flex items-center h-[40px] w-[180px] hover:bg-[#2E2E2E] rounded-lg">
+    <img className="h-[24px] w-[24px] mr-[24px]" src={icon} alt="" />
+    <p className="text-sm text-gray-300">{text}</p>
+  </div>
+);
+
 export function BigSideBar({ isOpen, setIsOpen }: BigSideBarProps) {
   const [isSubExpand, setisSubExpand] = useState(false);
   return (
-    <div className={`${isOpen ? "w-0" : "w-[240px] "} fixed top-16 z-20 md:static md:z-0 bg-[#0F0F0F] md:bg-transparent` }>
+    <div
+      className={`${
+        isOpen ? "w-0" : "w-[240px] "
+      } fixed top-16 z-20  md:static md:z-0 bg-[#0F0F0F] md:bg-transparent`}
+    >
       <div
-        className={` h-screen sticky top-[70px] gap-1 flex overflow-hidden flex-col hover:overflow-y-scroll`}
+        className={`h-[calc(100vh-70px)] sticky top-[70px] flex  overflow-hidden flex-col hover:overflow-y-scroll scrollbar-thin scrollbar-thumb-[#5E5E5D] scrollbar-track-transparent`}
+        onMouseEnter={() => (document.body.style.overflow = "hidden")}
+        onMouseLeave={() => (document.body.style.overflow = "auto")}
       >
-        <div className="flex flex-col gap-5 p-3  pl-5 justify-center">
-          <div className="flex h-7 w-7 gap-4 items-center">
-            <img src="home.svg" alt="" />
-            <p>Home</p>
-          </div>
-          <div className="flex gap-3 h-7 w-7">
-            <img src="youtube-shorts-logo.svg"></img>
-            <p>Shorts</p>
-          </div>
-          <div className="flex gap-3 h-7 w-7">
-            <img src="youtube_subscription_icon.svg"></img>
-            <p>Subscriptions</p>
-          </div>
-          <hr className="border-[#4E4E4E]"></hr>
+        <div className="flex flex-col  p-[12px] items-center">
+          <SidebarItem icon="home.svg" text="Home" />
+          <SidebarItem icon="youtube-shorts-logo.svg" text="Shorts" />
+          <SidebarItem
+            icon="youtube_subscription_icon.svg"
+            text="Subscriptions"
+          />
         </div>
 
-        <div className="flex flex-col p-4 pl-5 gap-5 ">
-          <div className="flex h-7 w-7 gap-4 items-center">
-            <p>You </p>
-          </div>
-          <div className="flex gap-3 h-7 w-auto">
-          <img src="you_your_Channel.svg"></img>
-          <p>Your channel</p>
-          </div>
-          <div className="flex gap-3 h-7 w-auto">
-            <img src="you_history.svg"></img>
-            <p>History</p>
-          </div>
-          <div className="flex gap-3 h-7 w-auto">
-            <img src="you_playlist.svg"></img>
-            <p>Playlists</p>
-          </div>
-          <div className="flex gap-3 h-7 w-auto">
-            <img src="you_videos.svg"></img>
-            <p className="flex-grow">Your videos</p>
-          </div>
-          <div className="flex gap-3 h-7 w-auto">
-            <img src="you_watch_later.svg"></img>
-            <p className="flex-grow">Watch later</p>
-          </div>
-          <div className="flex gap-3 h-7 w-auto">
-            <img src="you_liked_videos.svg"></img>
-            <p className="flex-grow">Liked videos</p>
-          </div>
-          <hr className="border-[#4E4E4E]"></hr>
+        <div className="flex">
+          <hr className="border-[#4E4E4E] w-[200px] h-[1px] ml-[12px]" />
         </div>
 
-        <div className="flex flex-col  p-4 pt-0 gap-4 ">
-          <div className="flex h-7 w-7 gap-4 items-center">
-            <p>Subscriptions</p>
-          </div>
+        <div className="flex flex-col p-[12px]  items-center ">
+          <p className="text-[16px] text-white font-medium  pb-2 p-[12px] self-start">
+            You
+          </p>
+          <SidebarItem icon="you_your_Channel.svg" text="Your channel" />
+          <SidebarItem icon="you_history.svg" text="History" />
+          <SidebarItem icon="you_playlist.svg" text="Playlists" />
+          <SidebarItem icon="you_videos.svg" text="Your videos" />
+          <SidebarItem icon="you_watch_later.svg" text="Watch later" />
+          <SidebarItem icon="you_liked_videos.svg" text="Liked videos" />
+        </div>
+
+        <div className="flex">
+          <hr className="border-[#4E4E4E] w-[200px] h-[1px] ml-[12px]" />
+        </div>
+
+        <div className="flex flex-col  p-[12px] pt-0   items-center">
+          <p className="text-[16px] text-white font-medium  pb-2 p-[12px] self-start">
+            Subscriptions
+          </p>
 
           <div
-            className={`flex flex-col  p-4  pt-0 gap-5 ${
+            className={`flex flex-col  p-[12px] gap-4 ${
               isSubExpand ? "h-full" : "h-[120px]"
             } overflow-hidden`}
           >
             {[...Array(20)].map((_, i) => (
-              <div className="flex gap-3 h-7 w-auto">
-                <img src="youtube_subscription_icon.svg"></img>
-                <p className="flex-grow">Channel {i}</p>
-              </div>
+              <SidebarItem
+                key={i}
+                icon="youtube_subscription_icon.svg"
+                text={`Channel ${i}`}
+              />
             ))}
           </div>
 
-          <div className="flex gap-3 p-4 pt-0 items-center">
-            <img src="youtube_subscription_icon.svg"></img>
+          <div className="flex gap-6 p-[12px] pl-[15px] self-start">
+            <img src="youtube_subscription_icon.svg" alt="" />
             <button
+              className="text-sm text-gray-300 "
               onClick={() => {
                 setisSubExpand(!isSubExpand);
               }}
@@ -88,113 +90,61 @@ export function BigSideBar({ isOpen, setIsOpen }: BigSideBarProps) {
               {isSubExpand ? "Show Less" : "Show More "}{" "}
             </button>
           </div>
-
-          <hr className="border-[#4E4E4E]"></hr>
-        </div>
-        <div className="flex flex-col p-4 pt-0 gap-3 ">
-          <div className="flex h-7 w-7 gap-4 items-center">
-            <p>Explore</p>
-          </div>
-          <div className="flex gap-3 h-7 w-7">
-            <img src="explore_trending.svg"></img>
-            <p>Trending</p>
-          </div>
-          <div className="flex gap-3 h-7 w-7">
-            <img src="explore_shopping.svg"></img>
-            <p>Shopping</p>
-          </div>
-          <div className="flex gap-3 h-7 w-7">
-            <img src="explore_music.svg"></img>
-            <p>Music</p>
-          </div>
-          <div className="flex gap-3 h-7 w-7">
-            <img src="explore_movies.svg"></img>
-            <p>Movies</p>
-          </div>
-          <div className="flex gap-3 h-7 w-7">
-            <img src="explore_live.svg"></img>
-            <p>Live</p>
-          </div>
-          <div className="flex gap-3 h-7 w-7">
-            <img src="explore_gaming.svg"></img>
-            <p>Gaming</p>
-          </div>
-          <div className="flex gap-3 h-7 w-7">
-            <img src="explore_news.svg"></img>
-            <p>News</p>
-          </div>
-          <div className="flex gap-3 h-7 w-7">
-            <img src="explore_sports.svg"></img>
-            <p>Sports</p>
-          </div>
-          <div className="flex gap-3 h-7 w-7">
-            <img src="explore_courses.svg"></img>
-            <p>Courses</p>
-          </div>
-          <div className="flex gap-3 h-7 w-auto">
-            <img src="explore_f&b.svg"></img>
-            <p className="">Fashion & Beauty </p>
-          </div>
-          <div className="flex gap-3 h-7 w-7">
-            <img src="explore_podcasts.svg"></img>
-            <p>Podcasts</p>
-          </div>
-          <hr></hr>
         </div>
 
-        <div className="flex flex-col  p-4 pt-0 gap-5 ">
-          <div className="flex h-7 w-auto gap-4 items-center">
-            <p>More from YouTube</p>
-          </div>
-          <div className="flex gap-3 h-7 w-auto">
-            <img src="youtube_premium.svg"></img>
-            <p>YouTube Premium</p>
-          </div>
-          <div className="flex gap-3 h-7 w-auto">
-            <img src="youtube_studio.svg"></img>
-            <p>YouTube Studio</p>
-          </div>
-          <div className="flex gap-3 h-7 w-auto">
-            <img src="youtube_music.svg"></img>
-            <p>YouTube Music</p>
-          </div>
-          <div className="flex gap-3 h-7 w-auto">
-            <img src="youtube_kids.svg"></img>
-            <p>YouTube Kids</p>
-          </div>
-          <hr></hr>
+        <div className="flex">
+          <hr className="border-[#4E4E4E] w-[200px] h-[1px] ml-[12px]" />
         </div>
 
-        <div className="flex flex-col p-4 pt-0 gap-4">
-        <div className="flex gap-3 h-7 w-7">
-          <img src="youtube_settings.svg" alt="" />
-          <p>Settings</p>
+        <div className="flex flex-col p-[12px] pt-0 items-center ">
+          <p className="text-[16px] text-white font-medium  pb-2 p-[12px] self-start ">
+            Explore
+          </p>
+          <SidebarItem icon="explore_trending.svg" text="Trending" />
+          <SidebarItem icon="explore_shopping.svg" text="Shopping" />
+          <SidebarItem icon="explore_music.svg" text="Music" />
+          <SidebarItem icon="explore_movies.svg" text="Movies" />
+          <SidebarItem icon="explore_live.svg" text="Live" />
+          <SidebarItem icon="explore_gaming.svg" text="Gaming" />
+          <SidebarItem icon="explore_news.svg" text="News" />
+          <SidebarItem icon="explore_sports.svg" text="Sports" />
+          <SidebarItem icon="explore_courses.svg" text="Courses" />
+          <SidebarItem icon="explore_f&b.svg" text="Fashion & Beauty" />
+          <SidebarItem icon="explore_podcasts.svg" text="Podcasts" />
         </div>
-        <div className="flex gap-3 h-7 w-auto items-center">
-        <img src="youtube_reportHistory.svg"></img>
-          <p>Report history</p>
+
+        <div className="flex">
+          <hr className="border-[#4E4E4E] w-[200px] h-[1px] ml-[12px]" />
         </div>
-        <div className="flex gap-3 h-7 w-7 items-center">
-          <img src="youtube_help.svg"></img>
-          <p>Help</p>
+
+        <div className="flex flex-col  p-4 pt-0  items-center">
+          <p className="text-[16px] text-white font-medium pl-0 pb-2 p-[12px] self-start">
+            More from YouTube
+          </p>
+          <SidebarItem icon="youtube_premium.svg" text="YouTube Premium" />
+          <SidebarItem icon="youtube_studio.svg" text="YouTube Studio" />
+          <SidebarItem icon="youtube_music.svg" text="YouTube Music" />
+          <SidebarItem icon="youtube_kids.svg" text="YouTube Kids" />
         </div>
-        <div className="flex h-7 w-auto gap-4 items-center">
-          <img src="youtube_sendfeedback.svg" alt="" />
-          <p>Send feedback</p>
+        <div className="flex">
+          <hr className="border-[#4E4E4E] w-[200px] h-[1px] ml-[12px]" />
         </div>
+        <div className="flex flex-col   p-[12px] items-center">
+          <SidebarItem icon="youtube_settings.svg" text="Settings" />
+          <SidebarItem icon="youtube_reportHistory.svg" text="Report history" />
+          <SidebarItem icon="youtube_help.svg" text="Help" />
+          <SidebarItem icon="youtube_sendfeedback.svg" text="Send feedback" />
         </div>
-        <hr></hr>
-       <div>
-        About Press Copyright
-        Contact us Creators
-        Advertise Developers
-       </div>
-       <br/>
-       <div>
-        Terms Privacy Policy & Safety
-        How YouTube works
-        Test new features
-       </div>
+        <hr className="border-[#4E4E4E] border-t-[1px] mt-[12px]" />
+        <div className="flex flex-col p-4 pt-0">
+          <p className="text-[13px] text-gray-400 mb-2">
+            About Press Copyright Contact us Creators Advertise Developers
+          </p>
+          <p className="text-[13px] text-gray-400 mb-2">
+            Terms Privacy Policy & Safety How YouTube works Test new features
+          </p>
+          <p className="text-[11px] text-gray-500 mt-4">© 2024 Google LLC</p>
+        </div>
       </div>
     </div>
   );

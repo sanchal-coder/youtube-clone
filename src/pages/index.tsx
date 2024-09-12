@@ -6,7 +6,6 @@ import { SideBar } from "@/components/SideBar";
 import { BigSideBar } from "@/components/BigSideBar";
 import { SetStateAction, useState } from "react";
 
-
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -16,16 +15,13 @@ export default function Home() {
   return (
     <div>
       <div>
-        
-          <NavBar
-            isOpen={isOpen}
-            setIsOpen={setIsOpen}
-            isSearchOpen={isSearchOpen}
-            setIsSearchOpen={setIsSearchOpen}
-          />
-      
+        <NavBar
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          isSearchOpen={isSearchOpen}
+          setIsSearchOpen={setIsSearchOpen}
+        />
       </div>
-
 
       {/* <NavBarSmall/> */}
 
