@@ -45,9 +45,13 @@ export function BigSideBar({ isOpen, setIsOpen }: BigSideBarProps) {
         </div>
 
         <div className="flex flex-col p-[12px]  items-center ">
-          <p className="text-[16px] text-white font-medium  pb-2 p-[12px] self-start">
-            You
-          </p>
+          <div className="flex w-full items-center self-start hover:bg-[#2E2E2E] rounded-lg">
+            <p className="text-[16px] text-white font-medium  pb-2 p-[12px] self-start">
+              You
+            </p>
+            <img className="pt-[8px]" src="you_side_arrow.svg" alt="" />
+          </div>
+
           <SidebarItem icon="you_your_Channel.svg" text="Your channel" />
           <SidebarItem icon="you_history.svg" text="History" />
           <SidebarItem icon="you_playlist.svg" text="Playlists" />
@@ -60,7 +64,7 @@ export function BigSideBar({ isOpen, setIsOpen }: BigSideBarProps) {
           <hr className="border-[#4E4E4E] w-[200px] h-[1px] ml-[12px]" />
         </div>
 
-        <div className="flex flex-col  p-[12px] pt-0   items-center">
+        <div className="flex flex-col  p-[12px] pt-0   items-center ">
           <p className="text-[16px] text-white font-medium  pb-2 p-[12px] self-start">
             Subscriptions
           </p>
@@ -79,8 +83,8 @@ export function BigSideBar({ isOpen, setIsOpen }: BigSideBarProps) {
             ))}
           </div>
 
-          <div className="flex gap-6 p-[12px] pl-[15px] self-start">
-            <img src="youtube_subscription_icon.svg" alt="" />
+          <div className="flex gap-6 p-[12px] pl-[15px] self-start hover:bg-[#2E2E2E] rounded-lg">
+            <img src="subscriptions_down_arrow.svg" alt="" />
             <button
               className="text-sm text-gray-300 "
               onClick={() => {
