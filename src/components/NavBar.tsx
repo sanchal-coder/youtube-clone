@@ -1,20 +1,38 @@
 import { SideBar } from "@/components/SideBar";
 import { BigSideBar } from "./BigSideBar";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 interface NavBarProps {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   isSearchOpen: boolean;
   setIsSearchOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  isVideoOpen: boolean;
+  setIsVideoOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  isProfileTileOpen: boolean;
+  setIsProfileTileOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  isNotificationsOpen: boolean;
+  setIsNotificationsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  videoIconRef: React.RefObject<HTMLDivElement>;
+  bellIconRef: React.RefObject<HTMLDivElement>;
+  profileIconRef: React.RefObject<HTMLDivElement>;
 }
 export function NavBar({
   isOpen,
   setIsOpen,
   isSearchOpen,
   setIsSearchOpen,
+  isVideoOpen,
+  setIsVideoOpen,
+  isProfileTileOpen,
+  setIsProfileTileOpen,
+  isNotificationsOpen,
+  setIsNotificationsOpen,
+  videoIconRef,
+  bellIconRef,
+  profileIconRef,
 }: NavBarProps) {
   const [isSearchOpen2, setIsSearchOpen2] = useState(false);
-  const [isInputFocused, setIsInputFocused] = useState(false); // Track input focus
+  const [isInputFocused, setIsInputFocused] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -199,8 +217,12 @@ export function NavBar({
             </div>
           </div>
 
-          <div className="flex gap-4 justify-between  items-center">
-            <div className="w-6 hidden md:block">
+          <div className="flex gap-4 justify-between  items-center  ">
+            <div
+              className="w-6  md:block "
+              onClick={() => setIsVideoOpen(!isVideoOpen)}
+              ref={videoIconRef}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -218,7 +240,13 @@ export function NavBar({
             </div>
 
             {isSearchOpen == false && (
-              <div className="w-6">
+              <div
+                className="w-6"
+                onClick={() => {
+                  setIsNotificationsOpen(!isNotificationsOpen);
+                }}
+                ref={bellIconRef}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -237,7 +265,14 @@ export function NavBar({
             )}
 
             {isSearchOpen == false && (
-              <img className="w-8 h-8 rounded-full" src="/A.jpg " alt="" />
+              <div ref={profileIconRef}>
+                <img
+                  className="w-8 h-8 rounded-full"
+                  src="/A.jpg "
+                  alt=""
+                  onClick={() => setIsProfileTileOpen(!isProfileTileOpen)}
+                />
+              </div>
             )}
           </div>
         </div>

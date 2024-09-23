@@ -23,7 +23,7 @@ export function BigSideBar({ isOpen, setIsOpen }: BigSideBarProps) {
   return (
     <div
       className={`${
-        isOpen ? "w-0" : "w-[240px] "
+        isOpen ? "w-240" : "w-[240px] "
       } fixed top-16 z-20  md:static md:z-0 bg-[#0F0F0F] md:bg-transparent`}
     >
       <div
@@ -83,7 +83,7 @@ export function BigSideBar({ isOpen, setIsOpen }: BigSideBarProps) {
             ))}
           </div>
 
-          <div className="flex gap-6 p-[12px] pl-[15px] self-start hover:bg-[#2E2E2E] rounded-lg">
+          <div className="flex gap-6 p-[12px] pl-[15px] self-start ">
             <img src="subscriptions_down_arrow.svg" alt="" />
             <button
               className="text-sm text-gray-300 "
