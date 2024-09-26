@@ -24,7 +24,7 @@ export function BigSideBar({ isOpen, setIsOpen }: BigSideBarProps) {
     <div
       className={`${
         isOpen ? "w-240" : "w-[240px] "
-      } fixed top-16 z-20  md:static md:z-0 bg-[#0F0F0F] md:bg-transparent`}
+      } fixed top-[71px] md:top-16 z-20   md:static md:z-0 bg-[#0F0F0F] md:bg-transparent`}
     >
       <div
         className={`h-[calc(100vh-70px)] sticky top-[70px] flex  overflow-hidden flex-col hover:overflow-y-scroll scrollbar-thin scrollbar-thumb-[#5E5E5D] scrollbar-track-transparent`}

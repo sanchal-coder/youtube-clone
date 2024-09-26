@@ -4,8 +4,11 @@ import { useEffect, useRef, useState } from "react";
 interface NavBarProps {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  
   isSearchOpen: boolean;
   setIsSearchOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  isSearchOpen2: boolean;
+  setIsSearchOpen2: React.Dispatch<React.SetStateAction<boolean>>;
   isVideoOpen: boolean;
   setIsVideoOpen: React.Dispatch<React.SetStateAction<boolean>>;
   isProfileTileOpen: boolean;
@@ -30,8 +33,10 @@ export function NavBar({
   videoIconRef,
   bellIconRef,
   profileIconRef,
+  isSearchOpen2,
+  setIsSearchOpen2
 }: NavBarProps) {
-  const [isSearchOpen2, setIsSearchOpen2] = useState(false);
+
   const [isInputFocused, setIsInputFocused] = useState(false);
 
   useEffect(() => {
@@ -88,7 +93,8 @@ export function NavBar({
   return (
     <div className=" top-0 fixed w-full z-20 bg-[#0F0F0F]">
       <div className="flex justify-between px-5 py-3 items-center">
-        {isSearchOpen == false && (
+        {
+        isSearchOpen == false && (
           <div className=" flex  ">
             <div
               className="flex gap-4 items-center "
@@ -146,10 +152,10 @@ export function NavBar({
         )}
 
         <div className="flex justify-end sm:justify-between grow ">
-          <div className="flex  sm:mx-auto  sm:w-[60%]">
+          <div className={isSearchOpen ? 'flex  px-3  w-[100%] ':'flex  sm:mx-auto  sm:w-[60%] '}>
             {isSearchOpen2 == true && (
               <input
-                className="bg-transparent border  border-[#282828]  p-2 rounded-l-full pl-4 w-[100%] "
+                className="bg-transparent border outline-1  border-[#282828]  p-2 rounded-l-full pl-4 w-[100%] "
                 placeholder="Search"
                 onFocus={handleFocus}
                 onBlur={handleBlur}
@@ -181,7 +187,7 @@ export function NavBar({
             )}
 
             {isSearchOpen == true && (
-              <div className="py-3 bg-transparent sm:bg-[#282828] sm:px-4 rounded-r-full flex items-center">
+              <div className="py-3 bg-[#282828] px-4 rounded-r-full flex items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"

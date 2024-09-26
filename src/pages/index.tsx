@@ -12,6 +12,7 @@ import dotenv from 'dotenv';
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isSearchOpen2, setIsSearchOpen2] = useState(false)
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const [isProfileTileOpen, setIsProfileTileOpen] = useState(false);
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
@@ -25,6 +26,12 @@ export default function Home() {
 
 
   useEffect(() => {
+
+    const screenwidth = window.innerWidth;
+    
+    if(!isSearchOpen){
+      setIsSearchOpen2(!(screenwidth < 640))
+    }
     const fetchVideos = async () => {
       try {
         const response = await fetch(url);
@@ -46,6 +53,8 @@ export default function Home() {
           setIsOpen={setIsOpen}
           isSearchOpen={isSearchOpen}
           setIsSearchOpen={setIsSearchOpen}
+          isSearchOpen2={isSearchOpen2}
+          setIsSearchOpen2={setIsSearchOpen2}
           isVideoOpen={isVideoOpen}
           setIsVideoOpen={setIsVideoOpen}
           isProfileTileOpen={isProfileTileOpen}
